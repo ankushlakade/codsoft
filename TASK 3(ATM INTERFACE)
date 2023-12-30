@@ -1,0 +1,49 @@
+import java.util.Scanner;
+ class ATMMachine
+{
+    public static void main(String[] args)
+    {
+    int balance=100000,withdraw,deposit;
+    Scanner sc=new Scanner(System.in);
+    while(true)
+    {
+        System.out.println("Automated teller machine");
+        System.out.println("Click 1 for withdraw");
+        System.out.println("Click 2 for deposit");
+        System.out.println("Click 3 for Check balance");
+        System.out.println("Click 4 EXIT");
+        System.out.println("Click the operation you want to perform: ");
+        int choice=sc.nextInt();
+        switch(choice)
+        {
+            case 1:
+            System.out.println("Enter money to withdraw: ");
+            withdraw=sc.nextInt();
+            if(balance>=withdraw)
+            {
+                balance=balance-withdraw;
+                System.out.println("Please collect your money");
+            }
+            else 
+            {
+                System.out.println("Insufficient balance");
+            }
+            System.out.println("");
+            break;
+            case 2:
+            System.out.println("Enter money to deposit: ");
+            deposit=sc.nextInt();
+            balance=balance+deposit;
+            System.out.println("Your maney has been successfully deposited");
+            
+            break;
+            case 3:
+            System.out.println("balance  "+balance);
+            System.out.println("");
+            case 4:
+            System.exit(0);
+        }
+        }
+    }
+}
+
